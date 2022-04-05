@@ -1,0 +1,171 @@
+*{
+    margin:0;
+    padding:0;
+}
+/*
+/*--- 2 UNIDADES DE MEDIDAS ---*/
+    /* em: 16px. No es del todo cierto (cuando es predefinido por navegador si). Toma el valor que yo defino en el contenedor que tenga esa etiqueta o el que esté más proximo.*/
+
+    /*body{
+        font-size: 30px;
+    }
+
+    div {
+        font-size: 60px;
+
+    } /* Si pongo este div, el header de abajo me va a tomar 60px=1em, ya que es el más proximo ahora*/
+
+   /* header h1{
+    font-size: 1em;
+    }
+    /* siguiendo lo de arriba, cada em = 30px debido a lo declarado en el body arriba*/
+
+   /*div p{
+        font-size: 0.5em;
+   }
+
+
+
+    /* rem: Me toma el valor predefinido que voy a tener en el navegador (16px). 
+    
+    EM Y REM SON UNIDADES DE MEDIDAS RELATIVAS QUE HACEN QUE TODO SE VAYA ADAPTANDO MEJOR AL PROYECTO*/
+
+   /* main {
+        font-size: 1rem;
+    }
+    /**/
+
+body{
+    background-color: #F8CED8;
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul{
+    display: flex; /*pone el menu horizontal*/
+    justify-content: center; /*centra menu*/
+    
+}
+ nav ul li {
+    list-style: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+ }
+
+ .mainNosotros {
+     display: grid;
+     grid-template-areas: "mainP mainP"
+                            "imagen1 imagen2"
+                            "imagen3 imagen4"
+                            "parrafo parrafo";
+    justify-content: center;
+ }
+
+ .sectionNosotros{
+     display: none;
+ }
+
+ .mainP {
+     grid-area: mainP;
+     text-align: center;
+ }
+
+ .imagen1 {
+    grid-area: imagen1;
+}
+
+.imagen2 {
+    grid-area: imagen2;
+}
+
+.imagen3 {
+    grid-area: imagen3;
+}
+
+.imagen4 {
+    grid-area: imagen4;
+}
+
+.parrafo {
+    grid-area: parrafo;
+}
+
+.parrafo {
+    grid-area: parrafo;
+    text-align: center;
+}
+
+footer p{
+    text-align: center;
+}
+
+/*--- MEDIA QUERIES*/
+/*cuando la pag se abra en un dispositivo que tenga como minimo 600px de ancho, se va a comportar de otra manera. La uso para cambiar lo que necesito nada más, no tengo que hacer todo de nuevo ni nada*/
+@media only screen and (min-width: 600px) {
+
+    .mainNosotros {
+        display: grid;
+        height: 80vh;
+        grid-template-areas: "mainP mainP mainP mainP"
+                                "img img img img"
+                               "imagen1 imagen2 imagen3 imagen4"
+                               "parrafo parrafo parrafo parrafo";
+       justify-content: center;
+    }
+
+    .sectionNosotros {
+        display: block;
+        grid-area: img;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .mainP, .parrafo{
+        font-size: 1.3rem;
+    }
+
+    .imagen1, .imagen2,.imagen3, .imagen4 {
+        padding: 1rem;
+        width: 60%;
+    } 
+    main div img {
+        width: 60%;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .mainNosotros {
+        display: grid;
+        height: 80vh;
+        grid-template-areas: "mainP mainP img img"
+                            "imagen1 imagen2 imagen3 imagen4"
+                            "parrafo parrafo parrafo parrafo";
+       justify-content: center;
+       align-items: center;
+    }
+
+    .sectionNosotros {
+        display: block;
+        grid-area: img;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .mainP, .parrafo{
+        font-size: 1.3rem;
+    }
+
+    .imagen1, .imagen2,.imagen3, .imagen4 {
+        padding: 1rem;
+    } 
+
+}
+
